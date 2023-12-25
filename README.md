@@ -120,7 +120,7 @@ If you need any information, I recommend looking for answers in the official doc
 
 **== Task ==**
 
-##### Start *Ubuntu Server 20.04 LTS* virtual machine
+##### Start *Ubuntu Server 22.04 LTS* virtual machine
 *Be prepared to save a dump of the virtual machine image at the end of the project*
 
 ##### Download and install **gitlab-runner** on the virtual machine
@@ -175,7 +175,7 @@ Between you and me, you're doing very well. [LOUDLY] Let's move on to writing in
 
 **== Task ==**
 
-##### Start the second virtual machine *Ubuntu Server 20.04 LTS*
+##### Start the second virtual machine *Ubuntu Server 22.04 LTS*
 
 #### Write a stage for **CD** that "deploys" the project on another virtual machine:
 
