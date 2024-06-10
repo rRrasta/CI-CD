@@ -1,0 +1,12 @@
+build-job:
+  stage: build
+  tags:
+    - build
+  script:
+    - cd src/cat && make s21_cat
+    - cd ../grep && mak s21_grep
+  artifacts:
+    paths:
+      - src/cat/s21_cat
+      - src/grep/s21_grep
+    expire_in: 30 days

@@ -1,0 +1,11 @@
+This is a test file for grep utility.
+It contains various lines with different patterns.
+You can use it to test different options and functionalities of grep.
+
+Here are some example patterns:
+pattern1
+pattern2
+pattern3
+
+This file is not very long, but it has enough content for testing purposes.
+Feel free to modify it or use it as is for your testing needs.
