@@ -1,12 +1,17 @@
-build-job:
-  stage: build
+stages:
+  - build
+
+build-code-job:
+  - stage: build
   tags:
-    - build
+    - my_runner
   script:
     - cd src/cat && make s21_cat
     - cd ../grep && make s21_grep
   artifacts:
     paths:
-      - src/cat/s21_cat
-      - src/grep/s21_grep
+      - src/cat/
+      - src/grep/
     expire_in: 30 days
+  only:
+    - develop
