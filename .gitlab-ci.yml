@@ -4,7 +4,7 @@ stages:
 build-job:
   stage: build
   tags:
-    - my_runner
+    - default
   script:
     - cd src/cat && make s21_cat
     - cd ../grep && make s21_grep
