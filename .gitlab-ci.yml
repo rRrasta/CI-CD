@@ -1,8 +1,8 @@
 stages:
   - build
 
-build-code-job:
-  - stage: build
+build-job:
+  stage: build
   tags:
     - my_runner
   script:
