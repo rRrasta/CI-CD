@@ -7,7 +7,7 @@ style-job:
   tags: 
     - style
   script:
-    - clang-format -n src/cat/cat.c src/grep/grep.c
+    - clang-format -Werror -n src/cat/cat.c src/grep/grep.c
   only:
     - develop  
 
