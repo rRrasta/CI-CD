@@ -1,3 +1,16 @@
+stages:
+  - style
+  - build
+
+style-job:
+  stage: style
+  tags: 
+    - style
+  script:
+    - clang-format -n src/cat/cat.c src/grep/grep.c
+  only:
+    - develop  
+
 build-job:
   stage: build
   tags:
@@ -10,4 +23,6 @@ build-job:
       - src/cat/s21_cat
       - src/grep/s21_grep
     expire_in: 30 days
+  only:
+    - develop
                    
