@@ -18,7 +18,7 @@ tests:
 	-diff <(./s21_cat --number $(FILE)) <(cat -n $(FILE))
 	-diff <(./s21_cat -b $(FILE)) <(cat -b $(FILE))
 	-diff <(./s21_cat --number-nonblank $(FILE)) <(cat -b $(FILE))
-#	-diff <(./s21_cat -etsnvb $(FILE)) <(cat -etsnvb $(FILE))
+	-diff <(./s21_cat -etsnvb $(FILE)) <(cat -etsnvb $(FILE))
 
 clean:
 	rm -f s21_cat
