@@ -1,6 +1,7 @@
 stages:
   - style
   - build
+  - test
 
 style-job:
   stage: style
@@ -25,4 +26,13 @@ build-job:
     expire_in: 30 days
   only:
     - develop
-                   
+        
+test-job:
+  stage: test
+  tags:
+    - test
+  script:
+    - cd src/cat/
+    - make tests
+    - cd ../grep/
+    - make tests 
