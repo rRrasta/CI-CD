@@ -21,7 +21,7 @@ for cmd in "${commands[@]}"; do
     if [ $? -ne 0 ]; then
         echo "FAIL"
         error_flag=1
-        break
+        exit 1
     fi
 
 done
