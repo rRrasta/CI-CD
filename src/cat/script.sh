@@ -11,7 +11,7 @@ commands=(
     "diff <(./s21_cat --number cat_test.txt) <(cat -n cat_test.txt)"
     "diff <(./s21_cat -b cat_test.txt) <(cat -b cat_test.txt)"
     "diff <(./s21_cat --number-nonblank cat_test.txt) <(cat -b cat_test.txt)"
-#    "diff <(./s21_cat -etsnvb cat_test.txt) <(cat -etsnvb cat_test.txt)"
+    "diff <(./s21_cat -etsnvb cat_test.txt) <(cat -etsnvb cat_test.txt)"
 )
 
 error_flag=0
