@@ -33,6 +33,6 @@ test-job:
     - test
   script:
     - cd src/cat/
-    - make tests
+    - ./script.sh
     - cd ../grep/
     - make tests 
