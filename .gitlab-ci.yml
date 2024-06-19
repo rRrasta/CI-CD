@@ -35,4 +35,18 @@ test-job:
     - cd src/cat/
     - ./script.sh
     - cd ../grep/
-    - make tests 
+    - make tests
+
+deploy-job:
+  stage: deploy
+  tags: 
+    - deploy
+  when: manual
+  script:
+    - chmod 777 src/run.sh
+    - sh src/run.sh
+
+
+
+
+
