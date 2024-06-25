@@ -44,8 +44,14 @@ deploy-job:
     - deploy
   when: manual
   script:
-    - chmod 777 src/run.sh
-    - sh src/run.sh
+    - |
+      if scp ./src/cat/s21_cat ./src/grep/s21_grep rrasta@192.168.56.102:~/ ; then
+        ssh rrasta@192.168.56.102 "sudo mv s21_cat s21_grep /usr/local/bin"
+        echo -e "\e[32mSuccesfully copy artifacts to /usr/local/bin\e[0m"
+      else
+        echo -e "\e[31mCAN'T COPY ARTIFACTS\e[0m"
+        exit 1
+      fi
 
 
 
