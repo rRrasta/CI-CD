@@ -4,12 +4,20 @@ stages:
   - test
   - deploy
 
+.notify: &notify
+  - |
+    source /home/edward828/config.conf
+    MESSAGE=$(if [[ "$CI_JOB_STATUS" =~ "failed" ]]; then echo "$CI_JOB_STAGE stage: FAIL"; else echo "$CI_JOB_STAGE stage: SUCCESS"; fi)
+    ssh "$REMOTE_USER"@"$REMOTE_SERVER" "curl -s -X POST $API_URL -d chat_id=$CHAT_ID -d text=\"$MESSAGE\"" > "/dev/null"
+
 style-job:
   stage: style
   tags: 
     - style
   script:
     - clang-format -Werror -n src/cat/cat.c src/grep/grep.c
+  after_script:
+    - *notify
   only:
     - develop  
 
@@ -20,6 +28,8 @@ build-job:
   script:
     - cd src/cat && make s21_cat
     - cd ../grep && make s21_grep
+  after_script:
+    - *notify
   artifacts:
     paths:
       - src/cat/s21_cat
@@ -37,6 +47,10 @@ test-job:
     - ./script.sh
     - cd ../grep/
     - make tests
+  after_script:
+    - *notify
+  only:
+    - develop
 
 deploy-job:
   stage: deploy
@@ -52,8 +66,8 @@ deploy-job:
         echo -e "\e[31mCAN'T COPY ARTIFACTS\e[0m"
         exit 1
       fi
-
-
-
-
+  after_script:
+    - *notify 
+  only:
+    - develop      
 
