@@ -3,7 +3,7 @@
 #include <string.h>
 
 typedef struct options {
-   bool show_end;        //-e
+  bool show_end;        //-e
   bool show_all;        //-v
   bool show_tabs;       //-t
   bool squeezed;        //-s
