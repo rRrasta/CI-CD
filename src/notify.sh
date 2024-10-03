@@ -6,7 +6,7 @@ else
     CI_JOB_STATUS="FAILED 😱😱😱"
 fi
 
-TELEGRAM_BOT_TOKEN="7434645155:AAHj4mlXnztorwsmC_t_hRzzVVlU4t6RATA"
+TELEGRAM_BOT_TOKEN="???"
 TELEGRAM_USER_ID="841885095"
 URL="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
 TEXT="Author:+$CI_COMMIT_AUTHOR%0A%0AJob name: $CI_JOB_NAME%0A%0AStatus:+$CI_JOB_STATUS%0A%0AProject:+$CI_PROJECT_NAME"
